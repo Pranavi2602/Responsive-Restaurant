@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+body{
+	background-image: url("https://media.istockphoto.com/id/635911456/photo/blended-fruit-smoothies.jpg?b=1&s=170667a&w=0&k=20&c=gLnM0HnP5uIPG662fgUgSE9OCZxkWyRC6sWdW2ouzwY=");
+  height:100%;
+  width:100%;
+  background-size:cover;
+  background-repeat : no-repeat;
+  background-attachment: fixed;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  margin-inline: 40%;
+}
+
+.flip-box-inner {
+  position: relative;;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+button{
+  align-items: center;
+  margin-left: 90%;
+  color: antiquewhite;
+}
+
+button{
+  align-items: center;
+  margin-right: 90%;
+  color: antiquewhite;
+}
+</style>
+</head>
+<body>
+
+  <h1 style="color:#f1f1f1">FRESH JUICE</h1></centre>
+  
+
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+  
+    <div class="flip-box-front">
+      <img src="mefresh.webp" alt="MENU" style="width:300px;height:400px">
+    </div>
+    
+    <div class="flip-box-back">
+      <h2><i>Fresh Juices</i></h2>
+      <p>
+        <table>
+<th colspan="2">===================</th>
+<tr>
+<td>Watermelon</td>
+<td>&#8377 40</td>
+</tr>
+<tr>
+<td>Papaya</td>
+<td>&#8377 60</td>
+</tr>
+<tr>
+<td>Grapes</td>
+<td>&#8377 60</td>
+</tr>
+<tr>
+<td>Orange</td>
+<td>&#8377 60</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>&#8377 80</td>
+</tr>
+<tr>
+<td>Mango</td>
+<td>&#8377 60</td>
+</tr>
+<tr>
+<td>Pomegranate</td>
+<td>&#8377 80</td>
+</tr>
+</table>
+        
+      </p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+<button type="submit" style="background-color: yellowgreen;"><a href=p3.html>BACK</a></button>
+<button type="submit" style="background-color: yellowgreen;"><a href=p7.html>NEXT</a></button>
+</body>
+</html>
