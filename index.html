@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <style>
+
+        body{
+            background-image: url("https://wallpaperaccess.com/full/3692584.jpg");
+            background-size: cover;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #ct{
+            float: right;
+            color: antiquewhite;
+            margin-top: 0%;
+        }
+        .form{
+            display:grid;
+            justify-items: center;
+            align-items: center;
+            border: 10px solid whitesmoke;
+            margin-left:30%;
+            margin-right: 30%;
+            margin-bottom: 5%;
+            margin-top: 5%;
+            justify-content: space-evenly;
+            text-align: center;
+            overflow: anywhere;
+            overflow-wrap: break-word;
+            
+        }
+        .link{
+            color:antiquewhite;
+            text-transform: capitalize;
+        }
+        .heading{
+            font-family:'Times New Roman';
+            font-size: 100px;
+            text-align: center;
+            text-transform: capitalize;
+            color:blanchedalmond;
+        }
+        .form input{ 
+            justify-items: center;
+            align-items: center;
+            
+            
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #final{
+            text-align: right;
+            color: goldenrod;
+            margin-bottom: 10%;
+            margin-top: 0%;
+            background-color: aliceblue;
+            width: 100%;
+            text-decoration: underline;
+            position:fixed;
+        
+          }
+        a:hover{
+            text-decoration: underline;
+            color: red;
+            background-color:rgba(0,0,0,0.5);
+        }
+            </style>
+   
+</head>
+<body onload=display_ct();>
+        <div><span id='ct' ></span></div>
+
+    <div class="alert-box">
+        <p class="alert"></p>
+    </div>
+
+    <form class="form">
+        <h1 class="heading">login</h1><br>
+        <input type="username" placeholder="username" autocomplete="off"  id="email" required><br><br><br>
+        <input type="password" placeholder="password" autocomplete="off"  id="password" required><br><br><br>
+        <button class="submit-btn" onClick="check()">log in</button><br>
+        <a href="sign.html" class="link">don't have an account? Register one</a><br><br>
+    </form>>
+    
+    <script >
+        function display_c(){
+        var refresh=1000; // Refresh rate in milli seconds
+        mytime=setTimeout('display_ct()',refresh)
+        }
+
+        function display_ct() {
+        var x = new Date()
+        document.getElementById('ct').innerHTML = x;
+        display_c();
+        }
+        console.log(10);
+        const a=document.getElementById("email");
+        const b=document.getElementById("password");
+        console.log(a);
+        console.log(b);
+        function check(){
+        const usern=JSON.parse(localStorage.getItem("user_name")) || [];
+        const pword=JSON.parse(localStorage.getItem("passw")) || [];
+        if(a.value==null || a.value=="      "){
+            alert("Name is mandatory");
+        }
+        else if(usern.indexOf(a.value)==-1){
+            alert("You are not a member. Sign up to continue");
+            window.open("sign.html");
+            //window.location.href="register.html";
+        }
+        else{
+            let indun=usern.indexOf(a.value);
+            let p=pword[indun];
+            if(p==b.value){
+                alert("Login is Successful");
+                window.open("main.html");
+                //window.location.href="home.html";
+            }
+            else{
+                alert("Wrong Password");
+            }
+        }
+        }     
+    </script>
+</body>
+</html>
