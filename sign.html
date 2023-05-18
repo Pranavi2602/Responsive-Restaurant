@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <style>
+
+        body{
+            background-image: url("https://wallpaperaccess.com/full/3692584.jpg");
+            background-size: cover;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #ct{
+            float: right;
+            color: antiquewhite;
+            margin-top: 0%;
+        }
+        .form{
+            display:grid;
+            justify-items: center;
+            align-items: center;
+            border: 10px solid whitesmoke;
+            margin-left:30%;
+            margin-right: 30%;
+            margin-bottom: 5%;
+            margin-top: 5%;
+            justify-content: space-evenly;
+            text-align: center;
+            overflow: anywhere;
+            overflow-wrap: break-word;
+            
+        }
+        .link{
+            color:antiquewhite;
+            text-transform: capitalize;
+        }
+        .heading{
+            font-family:'Times New Roman';
+            font-size: 100px;
+            text-align: center;
+            text-transform: capitalize;
+            color:blanchedalmond;
+        }
+        .form input{ 
+            justify-items: center;
+            align-items: center;
+            
+            
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #final{
+            text-align: right;
+            color: goldenrod;
+            margin-bottom: 10%;
+            margin-top: 0%;
+            background-color: aliceblue;
+            width: 100%;
+            text-decoration: underline;
+            position:fixed;
+        
+          }
+        a:hover{
+            text-decoration: underline;
+            color: red;
+            background-color:rgba(0,0,0,0.5);
+        }
+            </style>
+
+</head>
+<body>
+
+    <div class="alert-box">
+        <p class="alert"></p>
+    </div>
+    <form name="register">
+        <div class="form">
+        <h1 class="heading">Register</h1>
+        <input type="text" placeholder="name" autocomplete="off" class="name" id="name" name="name" required><br><br>
+        <input type="email" placeholder="email" autocomplete="off" class="email" id="email" name="email" required><br><br>
+        <input type="password" placeholder="password" autocomplete="off" class="password" id="password" name="password" required><br><br>
+        <button class="submit-btn" onClick="validate()">register</button><br><br>
+        <a href="index.html" class="link">already have an account ? log in here</a><br><Br>
+    </div></form>
+    s
+
+    <script>
+        function validate(){
+            var n=document.register.name.value;
+            var p=document.register.password.value;
+            if (p.length<8)
+                alert("Pasword must be greater than 8");
+            else{
+                const usern=JSON.parse(localStorage.getItem("user_name")) || [];
+                const pword=JSON.parse(localStorage.getItem("passw")) || [];
+                if(usern.indexOf(n)==-1){
+                    usern.push(n);
+                    pword.push(p);
+                    localStorage.setItem('user_name',JSON.stringify(usern));
+                    localStorage.setItem('passw',JSON.stringify(pword));
+                    alert("Register is Successful")
+                    window.open("index.html")
+                    //window.location.href="index.html";
+                }
+                else{
+                    alert("Username already exists");
+                    window.open("index.html")
+                    //window.location.href="index.html";
+                }
+                localStorage.setItem('user_name',JSON.stringify(usern));
+                localStorage.setItem('passw',JSON.stringify(pword));
+        }
+    }
+    </script>
+    
+</body>
+</html>
